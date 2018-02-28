@@ -1,0 +1,39 @@
+---
+title: "Jacob Necklen's Tools Vignette"
+author: "Jacob Necklen"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+
+This vignette is being used for the completion of Quiz 3 for STAT 3701 Spring 2018. Three different functions have (hopefully) been implemented: ggwrapper, choosecol, and loglikehood. 
+
+
+# Functions
+ggwrapper is a function that takes in three parameters: a dataset and two variables from the dataset. The first parameter is the desired dataset. The second parameter is the independent variable from the dataset which will be plotted on the x-axis. The third paramater is the dependent variable which will be plotted on the y-axis. 
+```{r}
+z = read.csv("http://www.stat.umn.edu/geyer/3701/data/growth.csv")
+x = z$HT5
+y = z$HT10
+ggplot2::ggplot(data = z, ggplot2::aes_string(x=x, y=y)) + ggplot2::geom_point()
+
+a = z$HT1
+b = z$SITE
+ggplot2::ggplot(data = z, ggplot2::aes_string(x=b, y=a)) + ggplot2::geom_point()
+
+
+m = z$HT12
+n = z$HT18
+ggplot2::ggplot(data = z, ggplot2::aes_string(x=m, y=n)) + ggplot2::geom_point()
+```
+choosecol is a function that takes in two paramaters: a dataset and one of its desired columns. The first parameter (again) is the dataset. The second parameter is the name of the column that the user wishes to filter for. 
+```{r}
+```
+loglikelihood is a function that takes in three paramets: a dataset, a distribution function, and an interval. The first parameter (shocker!) is the dataset. The second parameter is the distribution function that manipulates the given dataset. The third parameter is an interval over which to optimize the function. 
+```{r}
+```
