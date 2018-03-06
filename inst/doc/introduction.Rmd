@@ -25,7 +25,6 @@ WeightedData = read.table(url("http://www.stat.umn.edu/geyer/3701/data/q1p4.txt"
 head(WeightedData,3)
 library(ggplot2)
 library(dplyr)
-library(NecklenJacobTools)
 ```
 
 ## Functions
@@ -108,5 +107,4 @@ try(weightedGIEMO(list(x=rnorm(10), p=c(1:10))))
 message(geterrmessage())
 weightedGIEMO(WeightedData)
 ```
-(Notice that the first method does not work because the probability vector does not sum to 1)
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggwrapper.R
 \name{ggwrapper}
 \alias{ggwrapper}
-\title{Make a plot wither user's x and y variables from a dataset}
+\title{Make a plot with user's x and y variables from a dataset}
 \usage{
 ggwrapper(data, X, Y)
 }
@@ -17,5 +17,9 @@ ggwrapper(data, X, Y)
 plot
 }
 \description{
-Make a plot wither user's x and y variables from a dataset
+Make a plot with user's x and y variables from a dataset
+}
+\examples{
+d = read.csv("http://www.stat.umn.edu/geyer/3701/data/growth.csv")
+ggwrapper(d, d[,1], d[,2])
 }

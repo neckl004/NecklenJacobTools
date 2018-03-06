@@ -1,18 +1,19 @@
 
 #' Filter for a specific column in a matrix
-#' 
+#'
 #' @param data user's dataset
 #' @param colname name of column to filter for
-#' 
-#' @return matrix with filtered column
-#' 
-#' @export  
-#'      
+#'
+#' @return list with filtered column
+#'
+#' @export
+#'
 #' @examples
-#' #' choosecol(x, "gender")
-            choosecol = function(data, colname) 
+#' x = read.csv("http://www.stat.umn.edu/geyer/3701/data/growth.csv")
+#' choosecol(x, "HT10")
+            choosecol = function(data, colname)
             {
-              datafilter = data %>% dplyr::select(contains(colname))
-              return(datafilter)
+              col = dplyr::select(data, dplyr::contains(colname))
+              return(col)
             }
            

@@ -20,5 +20,7 @@ MLE
 Finds the MLE based on given data, distribution and interval
 }
 \examples{
-#' loglikelihood(x, binomial, c(-100,100))
+b <- scan(url("http://www.stat.umn.edu/geyer/3701/data/q1p7b.txt"))
+binom = function(theta, b) {dbinom(b, 20, prob = 1 / (1 + exp(- theta)), log = TRUE)}
+loglikelihood(b, binom, c(-100,100))
 }

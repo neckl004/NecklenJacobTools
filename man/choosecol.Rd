@@ -12,11 +12,12 @@ choosecol(data, colname)
 \item{colname}{name of column to filter for}
 }
 \value{
-matrix with filtered column
+list with filtered column
 }
 \description{
 Filter for a specific column in a matrix
 }
 \examples{
-#' choosecol(x, "gender")
+x = read.csv("http://www.stat.umn.edu/geyer/3701/data/growth.csv")
+choosecol(x, "HT10")
 }
